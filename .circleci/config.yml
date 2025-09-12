@@ -21,6 +21,12 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run:
+          name: "Print commit hash and message"
+          command: git log -1 --oneline
+      - run:
+          name: "KP"
+          command: "echo K () P"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/guides/orchestrate/workflows/ & https://circleci.com/docs/reference/configuration-reference/#workflows
