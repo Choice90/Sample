@@ -1,15 +1,43 @@
-# .gitlab-ci.yml
-
+version: 1.0
 stages:
-  - build
-  - test
-
-build_job:
-  stage: build
-  script:
-    - echo "Building the project..."
-
-test_job:
-  stage: test
-  script:
-    - echo "Running tests..."
+- buildjobs
+- tester
+jobs:
+  ant-source:
+    description: ''
+    type: git-cli
+    stage: buildjobs
+    timeout: 60
+    priority: major
+    parameters:
+      scripts:
+      - git clone https://gitlab.com/cmnsservices/cm-ant-standalone-test.git
+      captureArtifacts:
+      - '**/*'
+  Approval1:
+    type: approval-wait
+    stage: buildjobs
+    timeout: 5
+    priority: major
+    parameters:
+      approvers:
+      - kalaivani.v+cmlocal_t0@zohotest.com
+  Sleep:
+    type: sleep
+    stage: buildjobs
+    parameters:
+      sleepTime: 6
+  tester:
+    type: custom-container
+    stage: tester
+    timeout: 60
+    priority: major
+    parameters:
+      image:
+        type: CodeMine
+        path: ant:latest
+        resetEntryPoint: false
+        publicImage: false
+        shell: sh
+      scripts:
+      - echo $test
