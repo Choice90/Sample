@@ -12,12 +12,6 @@ jobs:
     parameters:
       scripts:
       - git clone https://gitlab.com/cmnsservices/cm-ant-standalone-test.git
-      captureArtifacts:
-    type: sleep
-    - '**/*'
-    stage: buildjobs
-    parameters:
-      sleepTime: 6
   tester:
     type: custom-container
     stage: tester
