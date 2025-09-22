@@ -14,15 +14,6 @@ jobs:
       - git clone https://gitlab.com/cmnsservices/cm-ant-standalone-test.git
       captureArtifacts:
       - '**/*'
-  Approval1:
-    type: approval-wait
-    stage: buildjobs
-    timeout: 5
-    priority: major
-    parameters:
-      approvers:
-      - kalaivani.v+cmlocal_t0@zohotest.com
-  Sleep:
     type: sleep
     stage: buildjobs
     parameters:
