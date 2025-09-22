@@ -1,1 +1,16 @@
 
+# config.yaml
+
+app:
+  name: MyApp
+  version: 1.0
+
+server:
+  host: localhost
+  port: 8000
+
+database:
+  host: localhost
+  port: 3306
+  user: root
+  password: password
