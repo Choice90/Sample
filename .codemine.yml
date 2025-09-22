@@ -1,6 +1,6 @@
 # config.yaml
 
-app:
+application:
   name: MyApp
   version: "1.0"
 
