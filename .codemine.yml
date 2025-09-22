@@ -14,6 +14,7 @@ jobs:
       - git clone https://gitlab.com/cmnsservices/cm-ant-standalone-test.git
       captureArtifacts:
     type: sleep
+    - '**/*'
     stage: buildjobs
     parameters:
       sleepTime: 6
