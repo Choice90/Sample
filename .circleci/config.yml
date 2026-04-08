@@ -21,6 +21,9 @@ jobs:
       - run:
           name: "Say Chintu"
           command: "echo Hello, Chintu!"
+      - run:
+          name: "Say Chintu"
+          command: "echo epo varing, Athai waiting!"
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/guides/orchestrate/workflows/ & https://circleci.com/docs/reference/configuration-reference/#workflows
